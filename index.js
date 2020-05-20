@@ -1,18 +1,18 @@
 "use strict"
 
-const EMPTYARR = []
-const SHORTSPLIT = /$|[!-@[-`{-~][\s\S]*/g
-const isArray = Array.isArray
+var EMPTYARR = []
+var SHORTSPLIT = /$|[!-@[-`{-~][\s\S]*/g
+var isArray = Array.isArray
 
-const parseValue = function(any) {
+var parseValue = function(any) {
   if (any === "") return ""
   if (any === "false") return false
-  const maybe = Number(any)
+  var maybe = Number(any)
   return maybe * 0 === 0 ? maybe : any
 }
 
-const parseAlias = function(aliases) {
-  let out = {},
+var parseAlias = function(aliases) {
+  var out = {},
     key,
     alias,
     prev,
@@ -37,8 +37,8 @@ const parseAlias = function(aliases) {
   return out
 }
 
-const parseDefault = function(aliases, defaults) {
-  let out = {},
+var parseDefault = function(aliases, defaults) {
+  var out = {},
     key,
     alias,
     value,
@@ -63,8 +63,8 @@ const parseDefault = function(aliases, defaults) {
   return out
 }
 
-const parseOptions = function(aliases, options, value) {
-  let out = {},
+var parseOptions = function(aliases, options, value) {
+  var out = {},
     key,
     alias,
     len,
@@ -92,8 +92,8 @@ const parseOptions = function(aliases, options, value) {
   return out
 }
 
-const write = function(out, key, value, aliases, unknown) {
-  let i,
+var write = function(out, key, value, aliases, unknown) {
+  var i,
     prev,
     alias = aliases[key],
     len = alias === undefined ? -1 : alias.length
@@ -117,15 +117,15 @@ const write = function(out, key, value, aliases, unknown) {
   }
 }
 
-const getopts = function(argv, opts) {
-  let unknown = (opts = opts || {}).unknown,
+var getopts = function(argv, opts) {
+  var unknown = (opts = opts || {}).unknown,
     aliases = parseAlias(opts.alias),
     strings = parseOptions(aliases, opts.string, ""),
     values = parseDefault(aliases, opts.default),
     bools = parseOptions(aliases, opts.boolean, false),
     stopEarly = opts.stopEarly,
     _ = [],
-    out = { _ },
+    out = { _: _ },
     i = 0,
     k = 0,
     len = argv.length,

@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "../..",
      "paths": {
-      "getopts": ["getopts.js", "getopts.d.ts"]
+      "getopts-compat": ["index.js", "getopts.d.ts"]
     },
     "noEmit": true
   }

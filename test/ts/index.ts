@@ -1,4 +1,4 @@
-import getopts, { ParsedOptions, Options } from "getopts"
+import getopts, { ParsedOptions, Options } from "getopts-compat";
 
 const options: Options = {
   alias: {

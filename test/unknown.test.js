@@ -6,7 +6,7 @@ exports.default = {
       name: "return true/false to accept/dismiss option if not in argv",
       argv: ["-AbCdEfG"],
       opts: {
-        unknown: opt => opt === opt.toUpperCase()
+        unknown: function (opt) { return opt === opt.toUpperCase() }
       },
       expected: {
         _: [],
@@ -24,7 +24,7 @@ exports.default = {
           a: "A",
           foo: "Foo"
         },
-        unknown: () => false
+        unknown: function () { return false; }
       },
       expected: {
         _: [],
@@ -37,7 +37,7 @@ exports.default = {
       argv: ["-abcdefg"],
       opts: {
         boolean: ["a"],
-        unknown: () => false
+        unknown: function () { return false; }
       },
       expected: {
         _: [],
@@ -49,7 +49,7 @@ exports.default = {
       argv: ["-abc"],
       opts: {
         string: ["b"],
-        unknown: () => false
+        unknown: function () { return false; }
       },
       expected: {
         _: [],
@@ -61,7 +61,7 @@ exports.default = {
       argv: ["-abcdefg/home"],
       opts: {
         alias: { a: "A", g: "G" },
-        unknown: () => false
+        unknown: function () { return false; }
       },
       expected: {
         _: [],

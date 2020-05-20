@@ -1,5 +1,5 @@
 {
-  "name": "getopts",
+  "name": "getopts-compat",
   "description": "Parse CLI options, better.",
   "version": "2.2.5",
   "main": "index.js",
@@ -22,12 +22,12 @@
     "cli-parser"
   ],
   "scripts": {
-    "test": "nyc -r lcov testmatrix test/*.test.js && nyc report && tsc -p test/ts",
+    "test": "nyc -r lcov testmatrix-compat test/*.test.js && nyc report && tsc -p test/ts",
     "release": "v=$npm_package_version; git commit -am $v && git tag -s $v -m $v && git push && git push --tags && npm publish"
   },
   "devDependencies": {
-    "nyc": "^14.1.1",
-    "testmatrix": "^0.1.2",
-    "typescript": "^3.5.2"
+    "nyc": "10.2.0",
+    "testmatrix-compat": "^0.1.2",
+    "typescript": "^2.9.2"
   }
 }
