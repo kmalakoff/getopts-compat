@@ -1,7 +1,7 @@
 {
   "name": "getopts-compat",
   "description": "Parse CLI options, better.",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "main": "index.js",
   "types": "index.d.ts",
   "license": "MIT",
