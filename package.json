@@ -3,13 +3,13 @@
   "description": "Parse CLI options, better.",
   "version": "2.2.5",
   "main": "index.js",
-  "types": "getopts.d.ts",
+  "types": "index.d.ts",
   "license": "MIT",
   "repository": "jorgebucaran/getopts",
   "author": "Jorge Bucaran",
   "files": [
     "index.js",
-    "getopts.d.ts"
+    "index.d.ts"
   ],
   "keywords": [
     "getopts",
